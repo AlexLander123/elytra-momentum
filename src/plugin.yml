@@ -1,0 +1,16 @@
+name: ElytraMomentum
+description: Allows elytra flight to last forever.
+version: 0.0.1
+main: com.dgrissom.elytramomentum.ElytraMomentum
+author: MCMastery
+
+commands:
+  toggleglide:
+    description: Toggles whether or not you will slow down when gliding with an elytra
+    aliases: [elytra, elytramomentum, elytraglide, toggleelytra, glide]
+    permission: elytramomentum.toggleglide
+    permission-message: You are not allowed to use that command!
+    usage: Syntax error! Simply type /&lt;command&gt; to toggle elytra gliding.
+permissions:
+  elytramomentum.toggleglide:
+    description: Allows a player to toggle elytra momentum
