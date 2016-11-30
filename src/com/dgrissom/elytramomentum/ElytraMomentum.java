@@ -48,7 +48,7 @@ public class ElytraMomentum extends JavaPlugin {
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        if (cmd.getLabel().equalsIgnoreCase("toggleglide")) {
+        if (cmd.getLabel().equalsIgnoreCase("glideon")) {
             if (!(sender instanceof Player)) {
                 sender.sendMessage(ChatColor.RED + "Only players can run that command!");
                 return true;
@@ -64,8 +64,27 @@ public class ElytraMomentum extends JavaPlugin {
                 enabledPlayers.add(player.getUniqueId());
                 player.sendMessage(ChatColor.GREEN + "You have enabled elytra gliding.");
             } else {
-                enabledPlayers.remove(player.getUniqueId());
+            	player.sendMessage(ChatColor.GREEN + "Gliding is already enabled.");
+            }
+
+            return true;
+        }else if (cmd.getLabel().equalsIgnoreCase("glideoff")) {
+            if (!(sender instanceof Player)) {
+                sender.sendMessage(ChatColor.RED + "Only players can run that command!");
+                return true;
+            }
+
+            Player player = (Player) sender;
+            if (!player.hasPermission("elytramomentum.toggleglide")) {
+                player.sendMessage(ChatColor.RED + "You are not allowed to use that command!");
+                return true;
+            }
+
+            if (enabledPlayers.contains(player.getUniqueId())) {
+            	enabledPlayers.remove(player.getUniqueId());
                 player.sendMessage(ChatColor.RED + "You have disabled elytra gliding.");
+            } else {
+            	player.sendMessage(ChatColor.RED + "Gliding is already disabled.");
             }
 
             return true;
