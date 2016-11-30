@@ -5,12 +5,16 @@ main: com.dgrissom.elytramomentum.ElytraMomentum
 author: MCMastery
 
 commands:
-  toggleglide:
-    description: Toggles whether or not you will slow down when gliding with an elytra
-    aliases: [elytra, elytramomentum, elytraglide, toggleelytra, glide]
+  glideon:
+    description: Toggles on whether or not you will slow down when gliding with an elytra
     permission: elytramomentum.toggleglide
     permission-message: You are not allowed to use that command!
-    usage: Syntax error! Simply type /&lt;command&gt; to toggle elytra gliding.
+    usage: Syntax error! Simply type /&lt;command&gt; to toggle on elytra gliding.
+  glideoff:
+    description: Toggles off whether or not you will slow down when gliding with an elytra
+    permission: elytramomentum.toggleglide
+    permission-message: You are not allowed to use that command!
+    usage: Syntax error! Simply type /&lt;command&gt; to toggle off elytra gliding.
 permissions:
   elytramomentum.toggleglide:
     description: Allows a player to toggle elytra momentum
